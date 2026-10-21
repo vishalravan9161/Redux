@@ -17,13 +17,13 @@ const App = () => {
           <button onClick={()=>{
             dispatch(increment())
           }}
-           className='bg-green-400 w-full shadow-md/100 items-center  rounded-xl px-3'>
+           className='bg-green-400 cursor-pointer active:scale-95 w-full shadow-md/100 items-center  rounded-xl px-3'>
             +1
           </button>
           <button onClick={()=>{
             dispatch(decrement())
           }}
-          className='flex bg-red-400 w-full shadow-md/100 items-center px-3 rounded-xl'>-1</button>
+          className='flex bg-red-400 cursor-pointer active:scale-95 w-full shadow-md/100 items-center px-3 rounded-xl'>-1</button>
           </div>
     </div> 
     </div>
