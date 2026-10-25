@@ -15,10 +15,16 @@ export async function FetchPhotos(query,page=1,per_page=20){
 
 
 export async function FetchVideos(query,page=1,per_page=15) {
-  const res = await axios.get('https://pixabay.com/api/videos/',{
-      params:{query,page,per_page},
-      headers:{Authorization:`Client-ID ${PIXABAY_KEY}`}
-   })
+  const res = await axios.get( "https://pixabay.com/api/videos/", {
+ 
+    params: {
+      key: PIXABAY_KEY,
+      q: "car",
+      page: 1,
+      per_page: 15,
+    },
+  }
+);
    return res.data 
    
 }
