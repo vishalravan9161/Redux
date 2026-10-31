@@ -11,7 +11,7 @@ const Tabs = () => {
       {tabs.map(function(elem,idx){
         return (
           <button key={idx}
-        className={`${(ActiveTab==elem ? 'bg-blue-700' : 'bg-gray-500')} transition border px-5 py-2 rounded-md cursor-pointer active:scale-95`}
+        className={`${(ActiveTab==elem ? 'bg-emerald-500' : 'bg-gray-400')} transition shadow-xl/55 px-5 py-2 rounded-md cursor-pointer active:scale-95`}
         onClick={()=>{
           dispatch(setActiveTabs(elem))
         }}
