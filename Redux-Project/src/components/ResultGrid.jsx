@@ -23,23 +23,27 @@ const ResultGrid = () => {
         let data = [];
         if (activeTab == "Photos") {
           let response = await FetchPhotos(query);
+            console.log(response.results)
           data = response.results.map((item) => ({
             id: item.id,
             type: item.asset_type,
             title: item.alt_description,
             thumbnail: item.urls.small,
             src: item.urls.full,
+            url:item.urls.full,
           }));
         }
 
         if (activeTab == "Videos") {
           let response = await FetchVideos(query);
+         
           data = response.hits.map((item) => ({
             id: item.user_id,
             type: 'video',
             title: item.name,
             thumbnail: item.videos.small.thumbnail,
             src: item.videos.small.url,
+            url:item.pageURL
           }));
   
         }
