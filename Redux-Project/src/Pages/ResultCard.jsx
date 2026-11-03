@@ -1,6 +1,14 @@
 import React from 'react'
 
 const ResultCard = ({item}) => {
+
+  const addToCollection = (item)=>{
+    const oldData = JSON.parse(localStorage.getItem('collection')) || []
+    const newData = [...oldData,item];
+    console.log(newData)
+    localStorage.setItem('collection',JSON.stringify(newData))
+  }
+
   return (
     <div className=''>
        <div className='relative bg-white border border-white shadow-xl/500 hover:scale-95 transition-all cursor-pointer active:scale-95  overflow-hidden rounded-md h-70 w-60'>
@@ -11,7 +19,11 @@ const ResultCard = ({item}) => {
            <a target='_blank' href={item.url}>
              <button className='-ml-1  bg-blue-400 bottom-0 cursor-pointer active:scale-95 px-4 py-2 rounded-md mb-4 mt-5  justify-center'>View</button>
            </a>
-           <button className=' bg-green-400 right-0 bottom-0 cursor-pointer active:scale-95 px-4 py-2 rounded-md mb-4 mt-5  justify-center'>save</button>
+           <button onClick={()=>{
+            addToCollection(item)
+           }}
+            className=' bg-green-400 right-0 bottom-0 cursor-pointer active:scale-95 px-4 py-2 rounded-md mb-4 mt-5  justify-center'>
+            save</button>
            </div>
        </div>
       
